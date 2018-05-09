@@ -4,3 +4,4 @@
 *.opendb
 *.suo
 *.db
+*.log
