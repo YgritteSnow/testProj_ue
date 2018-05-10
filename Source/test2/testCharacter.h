@@ -34,11 +34,24 @@ public:
 	void LookUp(float value);
 	void LookRight(float value);
 
+	float m_zoomFactor;
+	UPROPERTY(EditAnywhere)
+		float zoomMin;
+	UPROPERTY(EditAnywhere)
+		float zoomMax;
+	void Zoom(float value);
+
 	void JumpStart();
 	void JumpStop();
+
+	UPROPERTY(VisibleAnywhere)
+	USkeletalMeshComponent* m_skeletal;
+
+	UPROPERTY(EditAnywhere)
+	class USpringArmComponent* m_springArm;
 	
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* m_camera;
-	UPROPERTY(VisibleAnywhere)
-	USkeletalMeshComponent* m_skeletal;
+
+	FVector m_cameraRotation;
 };
