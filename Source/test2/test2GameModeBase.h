@@ -16,5 +16,15 @@ class TEST2_API Atest2GameModeBase : public AGameModeBase
 
 
 		virtual void StartPlay() override;
+
+	UFUNCTION(BlueprintCallable)
+		void ChangeUserWidget(TSubclassOf<UUserWidget> widget);
+
+	//UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UMG Game")
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UUserWidget> m_startWidget;
+
+	UPROPERTY(VisibleAnywhere)
+	UUserWidget* m_curWidget;
 	
 };
